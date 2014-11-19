@@ -38,8 +38,7 @@ NUM_CHK=5
 
 # check if repository is inited already. git log should not give error exit code
 if ! git log --format=%B -n $NUM_CHK > /dev/null; then
-	echo "[pre-commit hook] Assuming that this commit is initialize repository"
-	check_yes_no "[pre-commit hook] Continue? (Y/n) [Y]: "
+	exit 0
 fi
 
 # check if repository does no have commits with word "TMP" in commmit message
